@@ -1,0 +1,469 @@
+@startuml
+
+/' diagram meta data start
+config=CallConfiguration;
+{
+  "rootMethod": "Main#main(String[])",
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showMethodParametersTypes": false,
+    "showMethodParametersNames": false,
+    "showMethodReturnType": false,
+    "showPackageLevels": 2,
+    "showCallOrder": false,
+    "edgeMode": "MethodsOnly", // TypesOnly, MethodsOnly, TypesAndMethods, MethodsAndDirectTypeUsage
+    "showDetailedClassStructure": false
+  },
+  "rootClass": "Main",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="LR"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1185108371 { 
+   	label=Asignatura
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_309496626 { 
+   	label=Asignatura
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Asignatura1185108371XXXanadirAsig719352354[
+	label="+ anadirAsig()"
+	style=filled
+	fillcolor=white
+	tooltip="Asignatura
+
+&#10;  añaide una asignatura a la lista de asignaturas&#10;  @param sc Scanner para leer datos de entrada.&#10;  @return Asignatura creada.&#10; "
+	fontcolor=darkgreen
+];
+
+Asignatura1185108371XXXasigInicial1607506758[
+	label="+ asigInicial()"
+	style=filled
+	fillcolor=white
+	tooltip="Asignatura
+
+null"
+	fontcolor=darkgreen
+];
+
+Asignatura1185108371XXXmodifAsig363464627[
+	label="+ modifAsig()"
+	style=filled
+	fillcolor=white
+	tooltip="Asignatura
+
+&#10; &#10;  Modifica una asignatura de la lista de asignaturas.&#10; &#10;  @param listAsig Lista de asignaturas.&#10;  @param asig Asignatura a modificar.&#10; "
+	fontcolor=darkgreen
+];
+
+Asignatura1185108371XXXprintAsig1185108371[
+	label="+ printAsig()"
+	style=filled
+	fillcolor=white
+	tooltip="Asignatura
+
+&#10;  Imprime la lista de asignaturas.&#10; &#10;  @param asig Lista de asignaturas a imprimir.&#10; "
+	fontcolor=darkgreen
+];
+
+Asignatura1185108371XXXsortClave1607506758[
+	label="+ sortClave()"
+	style=filled
+	fillcolor=white
+	tooltip="Asignatura
+
+&#10;  Ordena una lista de asignaturas por su clave.&#10; &#10;  @param listAsig Lista de asignaturas que se ordenará.&#10; "
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_1237444259 { 
+   	label=BusquedaLineal
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1381339662 { 
+   	label=BusquedaLineal
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BusquedaLineal1237444259XXXaparicionAlu588101882[
+	label="+ aparicionAlu()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+&#10;  Imprime la aparición de alumnos con un nombre dado en la lista de alumnos.&#10; &#10;  @param listAlu Lista de alumnos en la que se buscará el nombre.&#10;  @param nombre Nombre de los alumnos que se están buscando.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaLineal1237444259XXXaparicionClave79188363[
+	label="+ aparicionClave()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+&#10;  Imprime la aparición de asignaturas con una clave dada en la lista de asignaturas.&#10; &#10;  @param listAsig Lista de asignaturas en la que se buscará la clave.&#10;  @param claveClave de las asignaturas que se están buscando.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaLineal1237444259XXXgetAlumno588101882[
+	label="+ getAlumno()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+&#10;  Busca un alumno en una lista de alumnos por identificador (nombres o apellidos).&#10; &#10;  @param listAlum Lista de alumnos en la que se realizará la búsqueda.&#10;  @param identificador Identificador (nombres o apellidos) del alumno que se está buscando.&#10;  @return El alumno encontrado o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaLineal1237444259XXXgetAlumno866154081[
+	label="+ getAlumno()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+&#10;  Busca un alumno en una lista de alumnos por nombres y apellidos.&#10; &#10;  @param listAlum Lista de alumnos en la que se realizará la búsqueda.&#10;  @param nombresNombres del alumno que se está buscando.&#10;  @param apellidos Apellidos del alumno que se está buscando.&#10;  @return El alumno encontrado o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaLineal1237444259XXXgetAsignatura79188363[
+	label="+ getAsignatura()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+&#10;  Busca una asignatura en una lista de asignaturas por su clave.&#10; &#10;  @param listAsig Lista de asignaturas en la que se realizará la búsqueda.&#10;  @param claveClave de la asignatura que se está buscando.&#10;  @return La asignatura encontrada o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaLineal1237444259XXXlinSearchBool588101882[
+	label="+ linSearchBool()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+&#10;  Realiza una búsqueda booleana en una lista de alumnos por nombres y apellidos.&#10; &#10;  @param listAlum Lista de alumnos en la que se realizará la búsqueda.&#10;  @param nombresNombres del alumno que se está buscando.&#10;  @param apellidos Apellidos del alumno que se está buscando.&#10;  @return true si se encuentra al menos un alumno con los nombres y apellidos, false si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaLineal1237444259XXXlinSearchBool79188363[
+	label="+ linSearchBool()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+null"
+	fontcolor=darkgreen
+];
+
+BusquedaLineal1237444259XXXlinSearchBool866154081[
+	label="+ linSearchBool()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaLineal
+
+&#10;  Realiza una búsqueda booleana en una lista de asignaturas por su clave.&#10; &#10;  @param listAsig Lista de asignaturas en la que se realizará la búsqueda.&#10;  @param claveClave de la asignatura que se está buscando.&#10;  @return true si se encuentra al menos una asignatura con la clave, false si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_1964228900 { 
+   	label=Alumno
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1803692754 { 
+   	label=Alumno
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Alumno1964228900XXXaluInicial12743509[
+	label="+ aluInicial()"
+	style=filled
+	fillcolor=white
+	tooltip="Alumno
+
+&#10;  Crea instancias iniciales de alumnos y las agrega a la lista.&#10; &#10;  @param listAlu Lista donde se agregarán los alumnos iniciales.&#10; "
+	fontcolor=darkgreen
+];
+
+Alumno1964228900XXXanadirAlu719352354[
+	label="+ anadirAlu()"
+	style=filled
+	fillcolor=white
+	tooltip="Alumno
+
+&#10;  Crea una nueva instancia de Alumno a partir de la entrada del usuario.&#10; &#10;  @param sc Scanner para leer la entrada del usuario.&#10;  @return Una nueva instancia de Alumno creada con los datos proporcionados por el usuario.&#10; "
+	fontcolor=darkgreen
+];
+
+Alumno1964228900XXXmodifAlu65482221[
+	label="+ modifAlu()"
+	style=filled
+	fillcolor=white
+	tooltip="Alumno
+
+&#10;  Modifica los datos de un alumno existente.&#10; &#10;  @param listAlu Lista de alumnos donde se buscará y modificará el alumno.&#10;  @param alu El objeto Alumno que se modificará.&#10; "
+	fontcolor=darkgreen
+];
+
+Alumno1964228900XXXprintAlu1964228900[
+	label="+ printAlu()"
+	style=filled
+	fillcolor=white
+	tooltip="Alumno
+
+&#10;  Imprime los datos de un alumno en la consola.&#10; &#10;  @param alu El objeto Alumno cuyos datos se imprimirán.&#10; "
+	fontcolor=darkgreen
+];
+
+Alumno1964228900XXXsortAluNombre12743509[
+	label="+ sortAluNombre()"
+	style=filled
+	fillcolor=white
+	tooltip="Alumno
+
+&#10;  Ordena una lista de alumnos por nombre de manera ascendente.&#10; &#10;  @param listAlu Lista de alumnos a ordenar.&#10; "
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_2390489 { 
+   	label=Main
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1706522830 { 
+   	label=Main
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   Main2390489XXXmain1859653459[
+	label="+ main()"
+	style=filled
+	fillcolor=white
+	tooltip="Main
+
+null"
+	penwidth=4
+	fontcolor=darkgreen
+];
+} 
+} 
+
+subgraph cluster_8728594 { 
+   	label=BusquedaBinaria
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1691474486 { 
+   	label=BusquedaBinaria
+	labeljust=l
+	fillcolor=white
+	style=filled
+   
+   BusquedaBinaria8728594XXXaparicionAlu588101882[
+	label="+ aparicionAlu()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+null"
+	fontcolor=darkgreen
+];
+
+BusquedaBinaria8728594XXXaparicionClave79188363[
+	label="+ aparicionClave()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+&#10;  Imprime la aparición de asignaturas con una clave dada en la lista de asignaturas.&#10; &#10;  @param listAsig Lista de asignaturas en la que se buscará la clave.&#10;  @param claveClave de las asignaturas que se están buscando.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaBinaria8728594XXXbinSearchAluBool1708982593[
+	label="+ binSearchAluBool()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+null"
+	fontcolor=darkgreen
+];
+
+BusquedaBinaria8728594XXXbinSearchAluBool866154081[
+	label="+ binSearchAluBool()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+&#10;  Busca una asignatura en una lista de asignaturas por su clave.&#10;  @param listAsig Lista de asignaturas en la que se realizará la búsqueda.&#10;  @param claveClave de la asignatura que se está buscando.&#10;  @return La asignatura encontrada o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaBinaria8728594XXXbinSearchBool79188363[
+	label="+ binSearchBool()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+&#10;  Busca una asignatura en una lista de asignaturas por su clave.&#10;  @param listAsig Lista de asignaturas en la que se realizará la búsqueda.&#10;  @param claveClave de la asignatura que se está buscando.&#10;  @return La asignatura encontrada o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaBinaria8728594XXXbusquedaBinariAlumno1708982593[
+	label="+ busquedaBinariAlumno()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+&#10;  Busca un alumno en una lista de alumnos por identificador (nombres o apellidos).&#10;  @param listAlum Lista de alumnos en la que se realizará la búsqueda.&#10;  @param identificador Identificador (nombres o apellidos) del alumno que se está buscando.&#10;  @return El alumno encontrado o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaBinaria8728594XXXbusquedaBinariAlumno866154081[
+	label="+ busquedaBinariAlumno()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+&#10;  Busca un alumno en una lista de alumnos por nombres y apellidos.&#10;  @param listAlum Lista de alumnos en la que se realizará la búsqueda.&#10;  @param nombresNombres del alumno que se está buscando.&#10;  @param apellidos Apellidos del alumno que se está buscando.&#10;  @return El alumno encontrado o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+
+BusquedaBinaria8728594XXXbusquedaBinaria79188363[
+	label="+ busquedaBinaria()"
+	style=filled
+	fillcolor=white
+	tooltip="BusquedaBinaria
+
+&#10;  Busca una asignatura en una lista de asignaturas por su clave.&#10;  @param listAsig Lista de asignaturas en la que se realizará la búsqueda.&#10;  @param claveClave de la asignatura que se está buscando.&#10;  @return La asignatura encontrada o null si no se encuentra.&#10; "
+	fontcolor=darkgreen
+];
+} 
+} 
+
+'edges    
+Alumno1964228900XXXmodifAlu65482221 -> Alumno1964228900XXXsortAluNombre12743509;
+Asignatura1185108371XXXmodifAsig363464627 -> Asignatura1185108371XXXsortClave1607506758;
+BusquedaBinaria8728594XXXaparicionAlu588101882 -> Alumno1964228900XXXprintAlu1964228900;
+BusquedaBinaria8728594XXXaparicionAlu588101882 -> Alumno1964228900XXXsortAluNombre12743509;
+BusquedaBinaria8728594XXXaparicionClave79188363 -> Asignatura1185108371XXXprintAsig1185108371;
+BusquedaBinaria8728594XXXaparicionClave79188363 -> Asignatura1185108371XXXsortClave1607506758;
+BusquedaBinaria8728594XXXbinSearchAluBool1708982593 -> Alumno1964228900XXXsortAluNombre12743509;
+BusquedaBinaria8728594XXXbinSearchAluBool866154081 -> Alumno1964228900XXXsortAluNombre12743509;
+BusquedaBinaria8728594XXXbinSearchBool79188363 -> Asignatura1185108371XXXsortClave1607506758;
+BusquedaBinaria8728594XXXbusquedaBinariAlumno1708982593 -> Alumno1964228900XXXsortAluNombre12743509;
+BusquedaBinaria8728594XXXbusquedaBinariAlumno866154081 -> Alumno1964228900XXXsortAluNombre12743509;
+BusquedaBinaria8728594XXXbusquedaBinaria79188363 -> Asignatura1185108371XXXsortClave1607506758;
+BusquedaLineal1237444259XXXaparicionAlu588101882 -> Alumno1964228900XXXprintAlu1964228900;
+BusquedaLineal1237444259XXXaparicionClave79188363 -> Asignatura1185108371XXXprintAsig1185108371;
+Main2390489XXXmain1859653459 -> Alumno1964228900XXXaluInicial12743509;
+Main2390489XXXmain1859653459 -> Alumno1964228900XXXanadirAlu719352354;
+Main2390489XXXmain1859653459 -> Alumno1964228900XXXmodifAlu65482221;
+Main2390489XXXmain1859653459 -> Alumno1964228900XXXprintAlu1964228900;
+Main2390489XXXmain1859653459 -> Asignatura1185108371XXXanadirAsig719352354;
+Main2390489XXXmain1859653459 -> Asignatura1185108371XXXasigInicial1607506758;
+Main2390489XXXmain1859653459 -> Asignatura1185108371XXXmodifAsig363464627;
+Main2390489XXXmain1859653459 -> Asignatura1185108371XXXprintAsig1185108371;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXaparicionAlu588101882;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXaparicionClave79188363;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXbinSearchAluBool1708982593;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXbinSearchAluBool866154081;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXbinSearchBool79188363;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXbusquedaBinariAlumno1708982593;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXbusquedaBinariAlumno866154081;
+Main2390489XXXmain1859653459 -> BusquedaBinaria8728594XXXbusquedaBinaria79188363;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXaparicionAlu588101882;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXaparicionClave79188363;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXgetAlumno588101882;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXgetAlumno866154081;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXgetAsignatura79188363;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXlinSearchBool588101882;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXlinSearchBool79188363;
+Main2390489XXXmain1859653459 -> BusquedaLineal1237444259XXXlinSearchBool866154081;
+    
+}
+@enduml

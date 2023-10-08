@@ -1,0 +1,219 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Main",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1185108371 { 
+   	label=Asignatura
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Asignatura1185108371[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Asignatura</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   clave: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   creditos: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ anadirAsig(sc: Scanner): Asignatura</TD></TR>
+<TR><TD ALIGN="LEFT" >+ asigInicial(listAsig: LinkedList&lt;Asignatura&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ modifAsig(listAsig: LinkedList&lt;Asignatura&gt;, asig: Asignatura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ printAsig(asig: Asignatura)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ sortClave(listAsig: LinkedList&lt;Asignatura&gt;)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1237444259 { 
+   	label=BusquedaLineal
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   BusquedaLineal1237444259[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BusquedaLineal</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ aparicionAlu(listAlu: LinkedList&lt;Alumno&gt;, nombre: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ aparicionClave(listAsig: LinkedList&lt;Asignatura&gt;, clave: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAlumno(listAlum: LinkedList&lt;Alumno&gt;, nombres: String, apellidos: String): Alumno</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAlumno(listAlum: LinkedList&lt;Alumno&gt;, identificador: String): Alumno</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getAsignatura(listAsig: LinkedList&lt;Asignatura&gt;, clave: int): Asignatura</TD></TR>
+<TR><TD ALIGN="LEFT" >+ linSearchBool(listAlum: LinkedList&lt;Alumno&gt;, identificador: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ linSearchBool(listAlum: LinkedList&lt;Alumno&gt;, nombres: String, apellidos: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ linSearchBool(listAsig: LinkedList&lt;Asignatura&gt;, clave: int): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1964228900 { 
+   	label=Alumno
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Alumno1964228900[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Alumno</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   Promedio: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   apellidos: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   carrera: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   edad: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nombre: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   numeroCuenta: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ aluInicial(listAlu: LinkedList&lt;Alumno&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ anadirAlu(sc: Scanner): Alumno</TD></TR>
+<TR><TD ALIGN="LEFT" >+ modifAlu(listAlu: LinkedList&lt;Alumno&gt;, alu: Alumno)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ printAlu(alu: Alumno)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ sortAluNombre(listAlu: LinkedList&lt;Alumno&gt;)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2390489 { 
+   	label=Main
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Main2390489[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_8728594 { 
+   	label=BusquedaBinaria
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   BusquedaBinaria8728594[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BusquedaBinaria</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ aparicionAlu(listAlu: LinkedList&lt;Alumno&gt;, nombre: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ aparicionClave(listAsig: LinkedList&lt;Asignatura&gt;, clave: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ binSearchAluBool(listAlum: LinkedList&lt;Alumno&gt;, identificador: String, modo: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ binSearchAluBool(listAlum: LinkedList&lt;Alumno&gt;, nombres: String, apellidos: String): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ binSearchBool(listAsig: LinkedList&lt;Asignatura&gt;, clave: int): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ busquedaBinariAlumno(listAlum: LinkedList&lt;Alumno&gt;, nombres: String, apellidos: String): Alumno</TD></TR>
+<TR><TD ALIGN="LEFT" >+ busquedaBinariAlumno(listAlum: LinkedList&lt;Alumno&gt;, identificador: String, modo: int): Alumno</TD></TR>
+<TR><TD ALIGN="LEFT" >+ busquedaBinaria(listAsig: LinkedList&lt;Asignatura&gt;, clave: int): Asignatura</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+BusquedaLineal1237444259 -> Alumno1964228900[label="aparicionAlu() -> printAlu()"];
+BusquedaLineal1237444259 -> Asignatura1185108371[label="aparicionClave() -> printAsig()"];
+    
+}
+@enduml
