@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //declaraciones e inicializaciones
-        boolean ver = true, ver2 = true, ver3 = true;
+        boolean ver = true, ver2, ver3;
         LinkedList<Alumno> listAlumnos = new LinkedList<>();
         LinkedList<Asignatura> listAsig = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
@@ -15,17 +15,34 @@ public class Main {
         //menu principal
         while(ver){
             ver2 = true;
-            System.out.println("\n\t- - - DATOS ESCOLARES - - -\n"+
-                                "Aqui podras encontrar datos académidos.\n"+
-                                "\n\t1. Busqueda.\n\t2. Modificar datos.\n\t3. Registrar nuevos datos.\n\t4. Salir. ");
+            System.out.println("""
+
+                    \t- - - DATOS ESCOLARES - - -
+                    Aqui podras encontrar datos académidos.
+
+                    \t1. Busqueda.
+                    \t2. Modificar datos.
+                    \t3. Registrar nuevos datos.
+                    \t4. Salir.\s""");
                                 System.out.print("  > ");
             int opc = sc.nextInt();
             sc.nextLine();
             switch(opc){
                 case 1->{
                     while(ver2){
-                        System.out.println("\n^^^ Que estrategia de busqueda desea utilizar? ^^^"+
-                                "\n\n\t1. Busqueda Lineal.\n\t   a1) Alumnado.\n\t   b1) Asignaturas.\n\n\t2. Busqueda Binaria.\n\t   a2) Alumnado.\n\t   b2) Asignaturas.\n\n\t3. Salir al menu principal.");
+                        System.out.println("""
+
+                                ^^^ Que estrategia de busqueda desea utilizar? ^^^
+
+                                \t1. Busqueda Lineal.
+                                \t   a1) Alumnado.
+                                \t   b1) Asignaturas.
+
+                                \t2. Busqueda Binaria.
+                                \t   a2) Alumnado.
+                                \t   b2) Asignaturas.
+
+                                \t3. Salir al menu principal.""");
                                 System.out.print("  > ");
                         String opc2 = sc.nextLine();
                         opc2 = opc2.toLowerCase();
@@ -91,8 +108,14 @@ public class Main {
                             }
                             case "b1"-> {// CASO BUSQUEDA LINEAL CLAVES
                                 while(ver3){
-                                    System.out.println("\n\t^^^ Que desea saber? (CLAVES) ^^^"+
-                                        "\n\n\t1. Si se encuentra registrada.\n\t2. Los datos de la asignatura.\n\t3. Apariciones de asignatura.\n\t4. Salir al menu anterior."); System.out.print("  > ");
+                                    System.out.println("""
+
+                                            \t^^^ Que desea saber? (CLAVES) ^^^
+
+                                            \t1. Si se encuentra registrada.
+                                            \t2. Los datos de la asignatura.
+                                            \t3. Apariciones de asignatura.
+                                            \t4. Salir al menu anterior."""); System.out.print("  > ");
                                     int opc3 = sc.nextInt();
                                     sc.nextLine();
                                     switch(opc3){
@@ -152,8 +175,6 @@ public class Main {
                                                     System.out.println("\n\tSe encontro un resultado coincidente.");
                                                 else 
                                                     System.out.println("\n\tNo se encontraron resultados coincidentes.");
-                                            }else{
-                                                break;
                                             }
                                         }
                                         case "b1"-> {
@@ -186,8 +207,6 @@ public class Main {
                                                     Alumno.printAlu(a22);
                                                 else 
                                                     System.out.println("\n\tNo se encontraron resultados coincidentes.");
-                                            }else{
-                                                break;
                                             }
                                         }
                                         case "b2"-> {
@@ -212,8 +231,14 @@ public class Main {
                             }
                             case "b2"-> {//CASO BUSQUEDA BINARIA CLAVES
                                 while(ver3){
-                                    System.out.println("\n\t^^^ Que desea saber? (CLAVES) ^^^"+
-                                        "\n\n\t1. Si se encuentra registrada.\n\t2. Los datos de la asignatura.\n\t3. Apariciones de asignatura.\n\t4. Salir al menu anterior."); System.out.print("  > ");
+                                    System.out.println("""
+
+                                            \t^^^ Que desea saber? (CLAVES) ^^^
+
+                                            \t1. Si se encuentra registrada.
+                                            \t2. Los datos de la asignatura.
+                                            \t3. Apariciones de asignatura.
+                                            \t4. Salir al menu anterior."""); System.out.print("  > ");
                                     int opc3 = sc.nextInt();
                                     sc.nextLine();
                                     switch(opc3){
@@ -306,12 +331,12 @@ public class Main {
                         String opc6 = sc.nextLine();
                         switch(opc6){
                             case "1"->{
-                                Alumno aluN = Alumno.anadirAlu(listAlumnos, sc);
+                                Alumno aluN = Alumno.anadirAlu(sc);
                                 System.out.println("\tAlumno anadido: ");
                                 Alumno.printAlu(aluN);
                             }
                             case "2"->{
-                                Asignatura claveN = Asignatura.anadirAsig(listAsig, sc);
+                                Asignatura claveN = Asignatura.anadirAsig(sc);
                                 System.out.println("\tAsignatura anadida: ");
                                 Asignatura.printAsig(claveN);
                             }
@@ -322,7 +347,7 @@ public class Main {
                 }  
                 case 4-> {
                     System.out.println("\n\tHasta luego !");
-                    ver = false; ver2 = false; ver3 = false;
+                    ver = false;
                 }
                 default-> System.out.println("\n\tEsta opcion no es correcta.\n\tIntente de nuevo.\n");
             }//FIN SWITCH PRINCIPAL

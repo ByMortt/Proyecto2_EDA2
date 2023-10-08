@@ -4,10 +4,11 @@ import java.util.LinkedList;
 /**
  *
  * @author grecia
+ *
+ * La clase BusquedaBinaria proporciona métodos para realizar búsquedas binarias en listas de alumnos y asignaturas.
  */
 public class BusquedaBinaria {
-    public LinkedList<Integer> index = new LinkedList<>();
-    
+
     //método que devuelve verdadero si la clave se encuentra en la lista y falso en caso contrario.
     public static boolean binSearchAluBool(LinkedList<Alumno> listAlum, String identificador, int modo) {
         Alumno.sortAluNombre(listAlum);
@@ -33,7 +34,13 @@ public class BusquedaBinaria {
         }
         return false;
     }
-
+    /**
+     * Busca una asignatura en una lista de asignaturas por su clave.
+     * @param listAsig Lista de asignaturas en la que se realizará la búsqueda.
+     * @param clave    Clave de la asignatura que se está buscando.
+     * @return La asignatura encontrada o null si no se encuentra.
+     */
+    @SuppressWarnings("JavadocReference")
     public static boolean binSearchAluBool(LinkedList<Alumno> listAlum, String nombres, String apellidos) {
         Alumno.sortAluNombre(listAlum);
         int izq = 0;
@@ -57,7 +64,12 @@ public class BusquedaBinaria {
         }
         return false;
     }
-
+    /**
+     * Busca una asignatura en una lista de asignaturas por su clave.
+     * @param listAsig Lista de asignaturas en la que se realizará la búsqueda.
+     * @param clave    Clave de la asignatura que se está buscando.
+     * @return La asignatura encontrada o null si no se encuentra.
+     */
     public static boolean binSearchBool(LinkedList<Asignatura> listAsig, int clave){
         Asignatura.sortClave(listAsig);
         int l=0;
@@ -78,6 +90,12 @@ public class BusquedaBinaria {
     }
 
     //METODOS QUE DEVUELVEN EL OBJETO
+    /**
+     * Busca una asignatura en una lista de asignaturas por su clave.
+     * @param listAsig Lista de asignaturas en la que se realizará la búsqueda.
+     * @param clave    Clave de la asignatura que se está buscando.
+     * @return La asignatura encontrada o null si no se encuentra.
+     */
     public static Asignatura busquedaBinaria(LinkedList<Asignatura> listAsig, int clave) {
         Asignatura.sortClave(listAsig);
         int izq = 0;
@@ -97,7 +115,13 @@ public class BusquedaBinaria {
         }
         return null;
     }
-
+    /**
+     * Busca un alumno en una lista de alumnos por nombres y apellidos.
+     * @param listAlum   Lista de alumnos en la que se realizará la búsqueda.
+     * @param nombres    Nombres del alumno que se está buscando.
+     * @param apellidos  Apellidos del alumno que se está buscando.
+     * @return El alumno encontrado o null si no se encuentra.
+     */
     public static Alumno busquedaBinariAlumno(LinkedList<Alumno> listAlum, String nombres, String apellidos) {
         Alumno.sortAluNombre(listAlum);
         int izq = 0;
@@ -121,7 +145,12 @@ public class BusquedaBinaria {
         }
         return null;
     }
-
+    /**
+     * Busca un alumno en una lista de alumnos por identificador (nombres o apellidos).
+     * @param listAlum       Lista de alumnos en la que se realizará la búsqueda.
+     * @param identificador  Identificador (nombres o apellidos) del alumno que se está buscando.
+     * @return El alumno encontrado o null si no se encuentra.
+     */
     public static Alumno busquedaBinariAlumno(LinkedList<Alumno> listAlum, String identificador, int modo) {
         Alumno.sortAluNombre(listAlum);
         int l = 0;
@@ -146,9 +175,7 @@ public class BusquedaBinaria {
         }
         return null;
     }
-
-
-    //método que devuelve apariciones e indice
+    //método que devuelve apariciones e indices de la clave en la lista
     public static void aparicionAlu(LinkedList<Alumno> listAlu, String nombre){
         Alumno.sortAluNombre(listAlu);
         LinkedList<Integer> index = new LinkedList<>();
@@ -200,7 +227,12 @@ public class BusquedaBinaria {
             System.out.println("\n\tNo se encontraron resultados coincidentes.");
         }
     }
-
+    /**
+     * Imprime la aparición de asignaturas con una clave dada en la lista de asignaturas.
+     *
+     * @param listAsig Lista de asignaturas en la que se buscará la clave.
+     * @param clave    Clave de las asignaturas que se están buscando.
+     */
     public static void aparicionClave(LinkedList<Asignatura> listAsig, int clave){
         Asignatura.sortClave(listAsig);
         LinkedList<Integer> index = new LinkedList<>();

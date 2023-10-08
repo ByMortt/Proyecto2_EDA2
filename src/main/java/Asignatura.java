@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -9,6 +8,13 @@ public class Asignatura {
     private int clave;
     private int creditos;
     //constructor
+    /**
+     * Constructor para crear un nuevo objeto Asignatura.
+     *
+     * @param nombre   Nombre de la asignatura.
+     * @param clave    Clave de la asignatura.
+     * @param creditos Creditos de la asignatura.
+     */
     public Asignatura(String nombre, int clave, int creditos) {
         this.nombre = nombre;
         this.clave = clave;
@@ -34,21 +40,25 @@ public class Asignatura {
         this.creditos = creditos;
     }
     //sobreescritura del método toString
+    /**
+     * Devuelve una representación en cadena de caracteres de la asignatura.
+     *
+     * @return Cadena de caracteres con la información de la asignatura.
+     */
     @Override
     public String toString() {
         return "Asignatura{" + "nombre=" + nombre + ", clave=" + clave + ", creditos=" + creditos + '}';
     }
 
-    //ordenamiento por CLAVE ASIG 
+    //ordenamiento por CLAVE ASIG
+    /**
+     * Ordena una lista de asignaturas por su clave.
+     *
+     * @param listAsig Lista de asignaturas que se ordenará.
+     */
     public static void sortClave(LinkedList<Asignatura> listAsig){
-        Collections.sort(listAsig, new Comparator<Asignatura>() {
-            @Override
-            public int compare(Asignatura asig1, Asignatura asig2) {
-                return Integer.compare(asig1.getClave(), asig2.getClave());
-            }
-        });
+        listAsig.sort(Comparator.comparingInt(Asignatura::getClave));
     }
-
     public static void asigInicial(LinkedList<Asignatura> listAsig){
         listAsig.add(new Asignatura("Probabilidad", 1436, 8));
         listAsig.add(new Asignatura("EDA II", 1317, 10));
@@ -57,14 +67,23 @@ public class Asignatura {
         listAsig.add(new Asignatura("Calculo Integral", 1221, 8));
         listAsig.add(new Asignatura("Calculo Vectorial", 1321, 8));
     }
-
+    /**
+     * Imprime la lista de asignaturas.
+     *
+     * @param asig Lista de asignaturas a imprimir.
+     */
     public static void printAsig(Asignatura asig){
         System.out.println("- - - - - - - - - - - - - - - - - - -\n > NOMBRE: "+asig.getNombre());
         System.out.println(" > CLAVE: "+asig.getClave()+ "\n > CREDITOS: "+ asig.getCreditos());
         System.out.println("- - - - - - - - - - - - - - - - - - -");            System.out.println();
     }
 
-    public static Asignatura anadirAsig(LinkedList<Asignatura> listAsig, Scanner sc){
+    /**
+     * añaide una asignatura a la lista de asignaturas
+     * @param sc Scanner para leer datos de entrada.
+     * @return Asignatura creada.
+     */
+    public static Asignatura anadirAsig(Scanner sc){
         System.out.print("\n > NOMBRE: ");
         String nombre = sc.nextLine();
 
@@ -74,10 +93,15 @@ public class Asignatura {
         System.out.print(" > CREDITOS: ");
         int creds = sc.nextInt();
 
-        Asignatura asigN = new Asignatura(nombre, clave, creds);
-        return asigN;
+        return new Asignatura(nombre, clave, creds);
     }
-
+    /**
+     *
+     * Modifica una asignatura de la lista de asignaturas.
+     *
+     * @param listAsig Lista de asignaturas.
+     * @param asig Asignatura a modificar.
+     */
     public static void modifAsig(LinkedList<Asignatura> listAsig, Asignatura asig){
         Scanner sc = new Scanner(System.in);
         System.out.print("\n > NOMBRE: ");
@@ -86,7 +110,7 @@ public class Asignatura {
 
         System.out.print(" > CLAVE: ");
         int clave = sc.nextInt();
-        asig.setClave(clave);;
+        asig.setClave(clave);
 
         System.out.print(" > CREDITOS: ");
         int creds = sc.nextInt();

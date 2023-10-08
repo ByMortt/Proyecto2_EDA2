@@ -1,9 +1,8 @@
-import java.util.Collections;
-import java.util.Comparator;
-//import java.util.List;
-import java.util.Scanner;
 import java.util.LinkedList;
-
+import java.util.Scanner;
+/**
+ * La clase Alumno representa a un estudiante con información relacionada.
+ */
 public class Alumno {
     //atributos
     private String nombre;
@@ -14,6 +13,16 @@ public class Alumno {
     private double Promedio;
 
     //constructor
+    /**
+     * Constructor para crear un nuevo objeto Alumno.
+     *
+     * @param nombre       Nombre del alumno.
+     * @param apellidos    Apellidos del alumno.
+     * @param numeroCuenta Número de cuenta del alumno.
+     * @param carrera      Carrera del alumno.
+     * @param edad         Edad del alumno.
+     * @param Promedio     Promedio del alumno.
+     */
     public Alumno(String nombre, String apellidos, String numeroCuenta, String carrera, int edad, double Promedio) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -65,23 +74,35 @@ public class Alumno {
 
 
     //sobreescritura del método toString
+    /**
+     * Sobreescritura del método toString para obtener una representación en cadena del objeto Alumno.
+     *
+     * @return Representación en cadena del objeto Alumno.
+     */
     @Override
     public String toString() {
         return "\n- - - - - - - - - - - - - - -\n > NOMBRE: " + apellidos + nombre + "\n > NO. DE CUENTA: " + numeroCuenta + "\n > CARRERA: " + carrera + "\n > EDAD: " + edad + "\n > PROMEDIO: " + Promedio + '}';
     }
 
-    //ordenamiento de lista alumnos por NOMBRE 
+    //ordenamiento de lista alumnos por NOMBRE
+    /**
+     * Ordena una lista de alumnos por nombre de manera ascendente.
+     *
+     * @param listAlu Lista de alumnos a ordenar.
+     */
     public static void sortAluNombre(LinkedList<Alumno> listAlu){
-        Collections.sort(listAlu, new Comparator<Alumno>(){
-            @Override
-            public int compare(Alumno alu1, Alumno alu2){
-                String name1 = alu1.getNombre().toLowerCase();
-                String name2 = alu2.getNombre().toLowerCase();
-                return name1.compareTo(name2);
-            }
+        listAlu.sort((alu1, alu2) -> {
+            String name1 = alu1.getNombre().toLowerCase();
+            String name2 = alu2.getNombre().toLowerCase();
+            return name1.compareTo(name2);
         });
     }
 
+    /**
+     * Crea instancias iniciales de alumnos y las agrega a la lista.
+     *
+     * @param listAlu Lista donde se agregarán los alumnos iniciales.
+     */
     public static void aluInicial(LinkedList<Alumno> listAlu){
         listAlu.add(new Alumno("Oscar Abraham", "de la Cruz Lopez", "313311115", "Ingenieria en Computacion", 0, 0.0));
         listAlu.add(new Alumno("Grecia", "Meneses Calderas", "320254361", "Ingenieria en Computacion", 19, 9.7));
@@ -89,8 +110,13 @@ public class Alumno {
         listAlu.add(new Alumno("Arturo", "Contreras", "412012988", "Ingenieria Ambiental", 21, 0));
         listAlu.add(new Alumno("Grecia", "Molina Roldan", "452101698", "Ingenieria en Computacion", 18, 0.0));
     }
-
-    public static Alumno anadirAlu(LinkedList<Alumno> listAlu, Scanner sc){
+    /**
+     * Crea una nueva instancia de Alumno a partir de la entrada del usuario.
+     *
+     * @param sc Scanner para leer la entrada del usuario.
+     * @return Una nueva instancia de Alumno creada con los datos proporcionados por el usuario.
+     */
+    public static Alumno anadirAlu(Scanner sc){
         System.out.print("\n > NOMBRE: ");
         String nombre = sc.nextLine();
 
@@ -109,10 +135,14 @@ public class Alumno {
         System.out.print(" > PROMEDIO: ");
         double prom = sc.nextDouble();
 
-        Alumno alu = new Alumno(nombre, ape, noCuenta, carr, edad, prom);
-        return alu;
+        return new Alumno(nombre, ape, noCuenta, carr, edad, prom);
     }
-
+    /**
+     * Modifica los datos de un alumno existente.
+     *
+     * @param listAlu Lista de alumnos donde se buscará y modificará el alumno.
+     * @param alu     El objeto Alumno que se modificará.
+     */
     public static void modifAlu(LinkedList<Alumno> listAlu, Alumno alu){
         Scanner sc = new Scanner(System.in);
         System.out.print("\n > NOMBRE: ");
@@ -141,7 +171,11 @@ public class Alumno {
 
         Alumno.sortAluNombre(listAlu);
     }
-
+    /**
+     * Imprime los datos de un alumno en la consola.
+     *
+     * @param alu El objeto Alumno cuyos datos se imprimirán.
+     */
     public static void printAlu(Alumno alu){
         System.out.println("- - - - - - - - - - - - - - - - - - -\n > NOMBRE: "+alu.getApellidos().toUpperCase() +" "+alu.getNombre().toUpperCase());
         System.out.println(" > NO. DE CUENTA: "+alu.getNumeroCuenta()+ "\n > CARRERA: "+ alu.getCarrera());
