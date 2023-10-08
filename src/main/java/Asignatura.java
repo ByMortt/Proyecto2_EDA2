@@ -59,12 +59,9 @@ public class Asignatura {
     }
 
     public static void printAsig(Asignatura asig){
-        if(asig!= null){
-            System.out.println("- - - - - - - - - - - - - - - - - - -\n > NOMBRE: "+asig.getNombre());
-            System.out.println(" > CLAVE: "+asig.getClave()+ "\n > CREDITOS: "+ asig.getCreditos());
-            System.out.println("- - - - - - - - - - - - - - - - - - -");
-            System.out.println();
-        }
+        System.out.println("- - - - - - - - - - - - - - - - - - -\n > NOMBRE: "+asig.getNombre());
+        System.out.println(" > CLAVE: "+asig.getClave()+ "\n > CREDITOS: "+ asig.getCreditos());
+        System.out.println("- - - - - - - - - - - - - - - - - - -");            System.out.println();
     }
 
     public static Asignatura anadirAsig(LinkedList<Asignatura> listAsig, Scanner sc){

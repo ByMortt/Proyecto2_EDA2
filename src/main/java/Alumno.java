@@ -143,13 +143,10 @@ public class Alumno {
     }
 
     public static void printAlu(Alumno alu){
-        if(alu!= null){
-            System.out.println("- - - - - - - - - - - - - - - - - - -\n > NOMBRE: "+alu.getApellidos().toUpperCase() +" "+alu.getNombre().toUpperCase());
-            System.out.println(" > NO. DE CUENTA: "+alu.getNumeroCuenta()+ "\n > CARRERA: "+ alu.getCarrera());
-            System.out.println(" > EDAD: "+alu.getEdad()+"\n > PROMEDIO: "+alu.getPromedio());
-            System.out.println("- - - - - - - - - - - - - - - - - - -");
-            System.out.println();
-        }
+        System.out.println("- - - - - - - - - - - - - - - - - - -\n > NOMBRE: "+alu.getApellidos().toUpperCase() +" "+alu.getNombre().toUpperCase());
+        System.out.println(" > NO. DE CUENTA: "+alu.getNumeroCuenta()+ "\n > CARRERA: "+ alu.getCarrera());
+        System.out.println(" > EDAD: "+alu.getEdad()+"\n > PROMEDIO: "+alu.getPromedio());
+        System.out.println("- - - - - - - - - - - - - - - - - - -"); System.out.println();
     } 
 
 }
